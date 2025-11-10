@@ -67,7 +67,7 @@ export const translations = {
     clientSupport: 'Client Support',
     clientSupportDesc: 'Dedicated support team available throughout the project lifecycle and beyond.',
     // Hero Section 3: Our Process
-    howWeWork: 'How We Work',
+    howWeWork: 'How We Work', 
     processTitle: 'Our Construction Process',
     processDesc: 'A systematic approach to ensure your project is completed efficiently and to the highest standards.',
     consultationPlanning: 'Consultation & Planning',

@@ -45,16 +45,10 @@ function Login() {
       localStorage.setItem('isAdminLoggedIn', 'true');
       localStorage.setItem('adminEmail', email);
       
-      // Save credentials if remember me is checked
-      if (rememberMe) {
-        localStorage.setItem('savedEmail', email);
-        localStorage.setItem('savedPassword', password);
-        console.log('Credentials saved:', { email, password }); // Debug log
-      } else {
-        localStorage.removeItem('savedEmail');
-        localStorage.removeItem('savedPassword');
-        console.log('Credentials removed'); // Debug log
-      }
+      // Always clear saved credentials after login
+      localStorage.removeItem('savedEmail');
+      localStorage.removeItem('savedPassword');
+      console.log('Credentials cleared after login'); // Debug log
       
       // Navigate to admin dashboard
       navigate('/admin/dashboard');
@@ -89,18 +83,12 @@ function Login() {
           localStorage.setItem('loginHistory', JSON.stringify(loginHistory));
         }
         
-        // Save credentials if remember me is checked
-        if (rememberMe) {
-          localStorage.setItem('savedEmail', email);
-          localStorage.setItem('savedPassword', password);
-          console.log('Credentials saved:', { email, password }); // Debug log
-        } else {
-          localStorage.removeItem('savedEmail');
-          localStorage.removeItem('savedPassword');
-          console.log('Credentials removed'); // Debug log
-        }
+        // Always clear saved credentials after login
+        localStorage.removeItem('savedEmail');
+        localStorage.removeItem('savedPassword');
+        console.log('Credentials cleared after login'); // Debug log
         
-        navigate('/');
+        navigate('/home');
       } else {
         // Check if email exists but password is wrong
         const emailExists = registeredUsers.find(u => u.email === email);

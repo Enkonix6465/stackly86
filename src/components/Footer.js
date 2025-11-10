@@ -46,7 +46,7 @@ function Footer() {
           <div className="footer-section">
             <h4>{t('quickLinks')}</h4>
             <ul className="footer-links">
-              <li><Link to="/">{t('home1')}</Link></li>
+              <li><Link to="/home">{t('home1')}</Link></li>
               <li><Link to="/home2">{t('home2')}</Link></li>
               <li><Link to="/about">{t('aboutUs')}</Link></li>
               <li><Link to="/services/architectural-design">{t('ourServices')}</Link></li>

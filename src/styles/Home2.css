@@ -753,7 +753,7 @@ body.dark-mode .contact-item p {
 }
 
 .contact-form {
-  background: #f8f9fa;
+  background: #222222;
   padding: 2.5rem;
   border-radius: 15px;
   transition: background-color 0.3s ease;
@@ -765,6 +765,7 @@ body.dark-mode .contact-form {
 
 .form-group {
   margin-bottom: 1.5rem;
+
 }
 
 .form-group input,
@@ -777,6 +778,8 @@ body.dark-mode .contact-form {
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
+  
+
 }
 
 body.dark-mode .form-group input,

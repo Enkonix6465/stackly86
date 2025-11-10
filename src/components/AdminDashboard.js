@@ -15,9 +15,8 @@ function AdminDashboard() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const [loginHistory, setLoginHistory] = useState([]);
-  const [userName, setUserName] = useState('Admin');
-  const [userInitials, setUserInitials] = useState('A');
-
+ 
+ 
   useEffect(() => {
     // Check if admin is logged in
     const isLoggedIn = localStorage.getItem('isAdminLoggedIn');
@@ -25,17 +24,7 @@ function AdminDashboard() {
       navigate('/login');
     }
     
-    // Get user name and initials
-    const storedUserName = localStorage.getItem('userName');
-    if (storedUserName) {
-      setUserName(storedUserName);
-      const nameParts = storedUserName.trim().split(' ');
-      const initials = nameParts.map(part => part.charAt(0).toUpperCase()).join('');
-      setUserInitials(initials.substring(0, 2));
-    } else {
-      setUserName('Admin');
-      setUserInitials('A');
-    }
+     
     
     // Load login history
     const history = JSON.parse(localStorage.getItem('loginHistory') || '[]');
@@ -67,9 +56,27 @@ function AdminDashboard() {
   };
 
   const deleteLoginEntry = (entryId) => {
-    const updatedHistory = loginHistory.filter(login => login.id !== entryId);
-    localStorage.setItem('loginHistory', JSON.stringify(updatedHistory));
-    setLoginHistory(updatedHistory);
+    // Find the login entry to get the user's email
+    const loginEntry = loginHistory.find(login => login.id === entryId);
+    
+    if (loginEntry) {
+      // Remove from login history
+      const updatedHistory = loginHistory.filter(login => login.id !== entryId);
+      localStorage.setItem('loginHistory', JSON.stringify(updatedHistory));
+      setLoginHistory(updatedHistory);
+      
+      // Also remove the user from registered users
+      const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+      const updatedUsers = registeredUsers.filter(user => user.email !== loginEntry.email);
+      localStorage.setItem('registeredUsers', JSON.stringify(updatedUsers));
+      
+      // Clear saved credentials if they match the deleted user
+      const savedEmail = localStorage.getItem('savedEmail');
+      if (savedEmail === loginEntry.email) {
+        localStorage.removeItem('savedEmail');
+        localStorage.removeItem('savedPassword');
+      }
+    }
   };
 
   const handleLogout = () => {

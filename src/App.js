@@ -27,7 +27,8 @@ import ProjectManagement from './components/ProjectManagement';
 
 function AppContent() {
   const location = useLocation();
-  const hideHeaderFooter = location.pathname === '/login' || 
+  const hideHeaderFooter = location.pathname === '/' ||
+                          location.pathname === '/login' || 
                           location.pathname === '/signup' || 
                           location.pathname === '/forgot-password' || 
                           location.pathname === '/reset-password' ||
@@ -38,8 +39,11 @@ function AppContent() {
       <ScrollToTop />
       {!hideHeaderFooter && <Header />}
       <Routes>
+        {/* Login Page - Default Route */}
+        <Route path="/" element={<Login />} />
+        
         {/* Home 1 - Main Homepage with sections */}
-        <Route path="/" element={
+        <Route path="/home" element={
           <>
             {/* Section 1: Hero - Main Landing */}
             <Hero />
@@ -55,7 +59,7 @@ function AppContent() {
         {/* About Page */}
         <Route path="/about" element={<About />} />
         
-        {/* Login Page */}
+        {/* Login Page (alternative route) */}
         <Route path="/login" element={<Login />} />
         
         {/* Sign Up Page */}

@@ -128,7 +128,7 @@ function Header() {
               {isHomeDropdownOpen && (
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/" onClick={() => { toggleMenu(); setIsHomeDropdownOpen(false); }}>{t('home1')}</Link>
+                    <Link to="/home" onClick={() => { toggleMenu(); setIsHomeDropdownOpen(false); }}>{t('home1')}</Link>
                   </li>
                   <li>
                     <Link to="/home2" onClick={() => { toggleMenu(); setIsHomeDropdownOpen(false); }}>{t('home2')}</Link>
