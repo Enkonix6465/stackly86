@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/ServiceDetail.css';
 import { useLanguage } from '../context/LanguageContext';
 import { getTranslation } from '../translations/translations';
@@ -6,6 +6,36 @@ import { getTranslation } from '../translations/translations';
 function ResidentialConstruction() {
   const { language } = useLanguage();
   const t = (key) => getTranslation(language, key);
+  const processRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.process-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('animate');
+              }, index * 200);
+            });
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const currentRef = processRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
 
   return (
     <div className="service-detail-page">
@@ -79,22 +109,22 @@ function ResidentialConstruction() {
             <h2>{t('resConProcessTitle')}</h2>
           </div>
           <div className="process-cards">
-            <div className="process-card">
+            <div className="process-card float-animation" style={{animationDelay: '0s'}}>
               <div className="card-number">01</div>
               <h3>{t('resConProcess1Title')}</h3>
               <p>{t('resConProcess1Desc')}</p>
             </div>
-            <div className="process-card">
+            <div className="process-card float-animation" style={{animationDelay: '0.2s'}}>
               <div className="card-number">02</div>
               <h3>{t('resConProcess2Title')}</h3>
               <p>{t('resConProcess2Desc')}</p>
             </div>
-            <div className="process-card">
+            <div className="process-card float-animation" style={{animationDelay: '0.4s'}}>
               <div className="card-number">03</div>
               <h3>{t('resConProcess3Title')}</h3>
               <p>{t('resConProcess3Desc')}</p>
             </div>
-            <div className="process-card">
+            <div className="process-card float-animation" style={{animationDelay: '0.6s'}}>
               <div className="card-number">04</div>
               <h3>{t('resConProcess4Title')}</h3>
               <p>{t('resConProcess4Desc')}</p>

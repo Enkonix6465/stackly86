@@ -1069,3 +1069,45 @@ body.dark-mode .btn-secondary:hover {
     font-size: 2rem;
   }
 }
+
+/* Slide In From Left with Bounce Animation */
+@keyframes slideInBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(20px) scale(1.05);
+  }
+  80% {
+    transform: translateX(-10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Hover Pulse Effect */
+@keyframes pulseHover {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+  }
+}
+
+.float-animation {
+  opacity: 0;
+  transform: translateX(-200px) scale(0.8);
+  animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.process-card.float-animation:hover {
+  animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+             pulseHover 1.5s ease-in-out infinite;
+}

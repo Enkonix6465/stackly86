@@ -537,24 +537,107 @@ body.dark-mode .home2-testimonials {
 }
 
 .testimonial-card {
-  background: #f8f9fa;
-  padding: 2.5rem;
+  background: transparent;
+  perspective: 1000px;
+  height: 450px;
+}
+
+.testimonial-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.testimonial-card:hover .testimonial-card-inner {
+  transform: rotateY(180deg);
+}
+
+.testimonial-card-front,
+.testimonial-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.testimonial-card-front {
+  background: #f8f9fa;
   border-left: 4px solid var(--primary-color);
-  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
 }
 
-body.dark-mode .testimonial-card {
+body.dark-mode .testimonial-card-front {
   background: #2d2d2d;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+.testimonial-card-back {
+  background: linear-gradient(135deg, var(--primary-color), #ff8c5a);
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+  padding: 2rem 1.5rem;
 }
 
-body.dark-mode .testimonial-card:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+body.dark-mode .testimonial-card-back {
+  background: linear-gradient(135deg, #1a2942, var(--primary-color));
+  box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+}
+
+.testimonial-card-back h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: white;
+  font-weight: 600;
+}
+
+.testimonial-card-back .back-role {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  color: white;
+}
+
+.back-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+  width: 100%;
+}
+
+.back-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.back-detail-item span:last-child {
+  font-size: 0.85rem;
+  color: white;
+  line-height: 1.3;
 }
 
 .testimonial-rating {

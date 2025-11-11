@@ -331,35 +331,113 @@ function Home2() {
           </div>
           <div className="testimonials-grid">
             <div className="testimonial-card">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <p className="testimonial-text">"{t('home2Testimonial1')}"</p>
-              <div className="testimonial-author">
-                <img src="https://i.pravatar.cc/80?img=12" alt="Client" />
-                <div>
-                  <h4>{t('home2Client1Name')}</h4>
-                  <p>{t('home2Client1Role')}</p>
+              <div className="testimonial-card-inner">
+                <div className="testimonial-card-front">
+                  <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                  <p className="testimonial-text">"{t('home2Testimonial1')}"</p>
+                  <div className="testimonial-author">
+                    <img src="https://i.pravatar.cc/80?img=12" alt="Client" />
+                    <div>
+                      <h4>{t('home2Client1Name')}</h4>
+                      <p>{t('home2Client1Role')}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="testimonial-card-back">
+                  <h3>{t('home2Client1Name')}</h3>
+                  <p className="back-role">{t('home2Client1Role')}</p>
+                  <div className="back-details">
+                    <div className="back-detail-item">
+                      <span className="detail-icon">📅</span>
+                      <span>Project: 2024</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">🏢</span>
+                      <span>Commercial Tower</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">📍</span>
+                      <span>New York, USA</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">💼</span>
+                      <span>TechCorp International</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="testimonial-card">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <p className="testimonial-text">"{t('home2Testimonial2')}"</p>
-              <div className="testimonial-author">
-                <img src="https://i.pravatar.cc/80?img=47" alt="Client" />
-                <div>
-                  <h4>{t('home2Client2Name')}</h4>
-                  <p>{t('home2Client2Role')}</p>
+              <div className="testimonial-card-inner">
+                <div className="testimonial-card-front">
+                  <div className="testimonial-rating">⭐⭐⭐⭐</div>
+                  <p className="testimonial-text">"{t('home2Testimonial2')}"</p>
+                  <div className="testimonial-author">
+                    <img src="https://i.pravatar.cc/80?img=47" alt="Client" />
+                    <div>
+                      <h4>{t('home2Client2Name')}</h4>
+                      <p>{t('home2Client2Role')}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="testimonial-card-back">
+                  <h3>{t('home2Client2Name')}</h3>
+                  <p className="back-role">{t('home2Client2Role')}</p>
+                  <div className="back-details">
+                    <div className="back-detail-item">
+                      <span className="detail-icon">📅</span>
+                      <span>Project: 2023</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">🏠</span>
+                      <span>Ocean View Residence</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">📍</span>
+                      <span>Miami, Florida</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">⭐</span>
+                      <span>Luxury Home</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="testimonial-card">
-              <div className="testimonial-rating">⭐⭐⭐⭐⭐</div>
-              <p className="testimonial-text">"{t('home2Testimonial3')}"</p>
-              <div className="testimonial-author">
-                <img src="https://i.pravatar.cc/80?img=33" alt="Client" />
-                <div>
-                  <h4>{t('home2Client3Name')}</h4>
-                  <p>{t('home2Client3Role')}</p>
+              <div className="testimonial-card-inner">
+                <div className="testimonial-card-front">
+                  <div className="testimonial-rating">⭐⭐⭐</div>
+                  <p className="testimonial-text">"{t('home2Testimonial3')}"</p>
+                  <div className="testimonial-author">
+                    <img src="https://i.pravatar.cc/80?img=33" alt="Client" />
+                    <div>
+                      <h4>{t('home2Client3Name')}</h4>
+                      <p>{t('home2Client3Role')}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="testimonial-card-back">
+                  <h3>{t('home2Client3Name')}</h3>
+                  <p className="back-role">{t('home2Client3Role')}</p>
+                  <div className="back-details">
+                    <div className="back-detail-item">
+                      <span className="detail-icon">📅</span>
+                      <span>Project: 2024</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">🏗️</span>
+                      <span>Mixed-Use Development</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">📍</span>
+                      <span>Chicago, Illinois</span>
+                    </div>
+                    <div className="back-detail-item">
+                      <span className="detail-icon">🌱</span>
+                      <span>Sustainable Building</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
